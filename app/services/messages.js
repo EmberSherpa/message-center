@@ -36,6 +36,10 @@ export default Ember.Service.extend({
     set(message, 'read', true);
   },
 
+  markUnread(message) {
+    set(message, 'read', false);
+  },
+
   setCurrentCategory(category_id) {
     this.set('currentCategory', category_id);
   }

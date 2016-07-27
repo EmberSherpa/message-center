@@ -1,4 +1,7 @@
 <div class="message">
+  {{#if model.read}}
+    <button {{action "markUnread" model}}>Mark Unread</button>
+  {{/if}}
   <h2>{{model.title}}</h2>
   <p>{{model.content}}</p>
 </div>

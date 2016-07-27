@@ -14,5 +14,10 @@ export default Ember.Route.extend({
     if (read === false) {
       this.get('messages').markRead(message);
     } 
+  },
+  actions: {
+    markUnread(message) {
+      this.get('messages').markUnread(message);
+    }
   }
 });
