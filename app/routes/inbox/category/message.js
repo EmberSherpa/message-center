@@ -1,10 +1,18 @@
 import Ember from 'ember';
+const {
+  inject
+} = Ember;
 
 export default Ember.Route.extend({
+  messages: inject.service(),
   model({message_id}) {
-    return {
-      title: `Hello World ${message_id}`,
-      content: `very nice message ${message_id}`
-    };
+    return this.get('messages').fetchMessage(message_id);
+  },
+  afterModel(message) {
+    let {read} = message;
+
+    if (read === false) {
+      this.get('messages').markRead(message);
+    } 
   }
 });

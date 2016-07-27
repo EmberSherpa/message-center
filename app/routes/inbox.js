@@ -1,12 +1,12 @@
 import Ember from 'ember';
 
+const {
+  inject
+} = Ember;
+
 export default Ember.Route.extend({
+  messages: inject.service(),
   model() {
-    return [
-      { name: 'Payments', id: 'payments' },
-      { name: 'Security', id: 'security' },
-      { name: 'Collections', id: 'collections' },
-      { name: 'Reporting', id: 'reporting' },    
-    ]
+    return this.get('messages').fetchCategories();
   }
 });

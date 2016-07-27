@@ -1,9 +1,11 @@
-<ul class="messages">
-{{#each model as |message|}}
-  <li>
-  {{#link-to 'inbox.category.message' message.id}}{{message.title}}{{/link-to}}
-  </li>
-{{/each}}
-</ul>
+{{#poll-more}}
+  <ul class="messages">
+  {{#each model as |message|}}
+    <li class="{{if message.read 'read' 'unread'}}">
+    {{#link-to 'inbox.category.message' message.id}}{{message.title}}{{/link-to}}
+    </li>
+  {{/each}}
+  </ul>
+{{/poll-more}}
 
 {{outlet}}

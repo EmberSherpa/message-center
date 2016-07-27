@@ -6,6 +6,20 @@ html, body {
   float: left;
   width: 20%;
   padding-left: 0;
+  list-style: none;
+}
+
+.messages li {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.messages li.read {
+  border: 1px solid lightblue;
+}
+
+.messages li.unread {
+  border: 1px solid grey;
 }
 
 .message {
