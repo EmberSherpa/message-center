@@ -1,0 +1,14 @@
+html, body {
+  margin: 0;
+}
+
+.categories, .messages {
+  float: left;
+  width: 20%;
+  padding-left: 0;
+}
+
+.message {
+  float: left;
+  width: 59%;
+}
